@@ -1,25 +1,20 @@
 namespace TwitterClone.Domain.Entities;
 
-public class user
+public class user:Bookmarks
 {
-    private Guid _id;
+    
     private string _firstName;
     private string _lastName;
     private string _email;
     private string _password;
-    private DateTime _createdAt;
+    
 
     public user()
     {
-       _id = Guid.NewGuid();
-       _createdAt = DateTime.Now;   
+        
     }
 
-    public Guid ID
-    {
-        get { return _id; }
-       
-    }
+
 
     public string FirstName
     {
@@ -35,9 +30,10 @@ public class user
     public string Email { get; set; }
     private string PassWord { get; }
 
-    public DateTime Createdat
+    public override string DescribeRecord()
     {
-        get { return _createdAt; }
+        var baseRecord = base.DescribeRecord();
+        return $"baseRecord:{baseRecord}, FirstName:{_firstName},LastName:{_lastName},Email:{_email},Password:{_password}";
     }
 }
 
