@@ -1,6 +1,6 @@
 namespace TwitterClone.Domain.Entities;
 
-public class user:Bookmarks
+public class User:Bookmarks
 {
     
     private string _firstName;
@@ -9,7 +9,7 @@ public class user:Bookmarks
     private string _password;
     
 
-    public user()
+    public User()
     {
         
     }

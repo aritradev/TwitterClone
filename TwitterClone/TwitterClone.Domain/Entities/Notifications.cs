@@ -6,13 +6,13 @@ public class Notifications:BaseEntities
     private string _message;
     private bool _isRead;
   
-    public Notifications():base(Guid.NewGuid())
+    public Notifications(string notificationType):base(Guid.NewGuid())
     {
-       
+        _type = notificationType;
     }
     public string Type { get; set; }
     public string Message { get; set; }
-    public bool  IsRead { get; }
+    public bool  IsRead { get; set; }
    
     public override string DescribeRecord()
     {
