@@ -1,6 +1,6 @@
 namespace TwitterClone.Domain.Entities;
 
-public sealed class SystemNotification:Notifications 
+public class SystemNotification:Notifications 
 {
     public SystemNotification(Guid systemUserId) : base("System")
     {
@@ -18,5 +18,10 @@ public sealed class SystemNotification:Notifications
     {
         var baseRecord= base.DescribeRecord();
         return $"BaseRecord:{baseRecord},SystemrId:{SystemId} ,Message:{Message}";
+    }
+
+    public override string GetMessage()
+    {
+        return $"System Notification: Unknown Error";
     }
 }

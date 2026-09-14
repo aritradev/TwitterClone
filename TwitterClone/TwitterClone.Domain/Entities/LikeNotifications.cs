@@ -17,4 +17,8 @@ public class LikeNotifications : Notifications
         var baseRecord= base.DescribeRecord();
         return $"BaseRecord:{baseRecord},LikeByUserId:{LikeByUserId}";
     }
+    public override string GetMessage()
+    {
+        return $"User with ID {LikeByUserId} Liked your post.";
+    }
 }
